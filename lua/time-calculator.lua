@@ -62,10 +62,8 @@ local calculate_time = function()
 	local parsed = vim.treesitter.query.parse(
 		'markdown',
 		[[
-			(document
-				(section
-					(pipe_table
-						(pipe_table_row) @row)))
+			(pipe_table
+				(pipe_table_row) @row)
 		]]
 	)
 
