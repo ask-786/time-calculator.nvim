@@ -83,7 +83,7 @@ local calculate_time = function()
 
 			local str = vim.trim(text)
 
-			if str ~= '' then
+			if str ~= '' and str ~= '-' then
 				table.insert(times, str)
 			end
 		end
