@@ -122,6 +122,10 @@ local calculate_time = function()
 	if last_node then
 		set_node_text(last_node, calculate_grand_total(totals))
 	end
+
+	vim.api.nvim_buf_call(0, function()
+		vim.cmd('w')
+	end)
 end
 
 ---@class CalculateOpts
