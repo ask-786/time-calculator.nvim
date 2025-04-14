@@ -45,6 +45,8 @@ require('time-calculator').setup({
 })
 ```
 
+Or you can set `keymap` to `nil` to disable the mapping completely.
+
 **Programmatic use:**
 
 ```lua

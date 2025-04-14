@@ -129,7 +129,7 @@ M.calculate_time = function()
 end
 
 ---@class CalculateOpts
----@field keymap string
+---@field keymap string | nil
 ---@field mode string | string[]
 ---@field desc string
 
@@ -147,12 +147,14 @@ M.setup = function(opts)
 	---@type CalculateOpts
 	options = vim.tbl_extend('force', options, opts)
 
-	vim.keymap.set(
-		options.mode,
-		options.keymap,
-		M.calculate_time,
-		{ desc = options.desc }
-	)
+	if options.keymap ~= nil then
+		vim.keymap.set(
+			options.mode,
+			options.keymap,
+			M.calculate_time,
+			{ desc = options.desc }
+		)
+	end
 end
 
 return M
